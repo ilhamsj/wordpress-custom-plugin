@@ -1,6 +1,6 @@
 {
     "name": "iam-atomic/movie",
-    "type": "wordpress-theme",
+    "type": "wordpress-plugin",
     "description": "Wordpress Plugin Inspiried from movie",
     "authors": [
         {
