@@ -1,0 +1,16 @@
+{
+    "name": "iam-atomic/movie",
+    "type": "wordpress-theme",
+    "description": "Wordpress Plugin Inspiried from movie",
+    "authors": [
+        {
+            "name": "ilhamsj",
+            "email": "ilhamsaputrajati@outlook.com"
+        }
+    ],
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}
