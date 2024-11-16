@@ -10,5 +10,9 @@ if (!defined('ABSPATH')) {
 }
 
 // Autoload or include dependencies
-require_once plugin_dir_path(__FILE__) . 'src/routes/api.php';
-require_once plugin_dir_path(__FILE__) . 'src/controllers/BookController.php';
+require_once __DIR__ . '/vendor/autoload.php';
+
+use App\Routing\Api;
+
+$api = new Api();
+$api->run();
