@@ -1,0 +1,12 @@
+{
+    "intelephense.environment.includePaths": [
+        "${workspaceFolder}/vendor",
+        "/Users/ilhamsj/github/ilhamsj/wordpress-infra/src/wordpress/public/wordpress"
+    ],
+    "[php]": {
+        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    }
+}

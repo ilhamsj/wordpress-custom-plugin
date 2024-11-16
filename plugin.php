@@ -12,7 +12,6 @@ if (!defined('ABSPATH')) {
 // Autoload or include dependencies
 require_once __DIR__ . '/vendor/autoload.php';
 
-use App\Routing\Api;
+use App\Init;
 
-$api = new Api();
-$api->run();
+new Init();

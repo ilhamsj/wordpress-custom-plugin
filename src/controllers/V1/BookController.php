@@ -10,7 +10,7 @@ class BookController {
     public function index(WP_REST_Request $request) {
         // Fetch all books
         $books = get_posts([
-            'post_type' => 'book',
+            'post_type' => 'post',
             'posts_per_page' => -1,
         ]);
 
