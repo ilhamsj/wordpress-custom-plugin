@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Routing;
+namespace App\Http\Routing;
 
-use App\Routing\V1\BookRoutes;
-use App\Routing\V1\UserRoutes;
+use App\Http\Routing\V1\BookRoutes;
+use App\Http\Routing\V1\UserRoutes;
 
 class Api {
     public function __construct()

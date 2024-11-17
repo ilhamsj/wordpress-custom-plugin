@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Routing\V1;
+namespace App\Http\Routing\V1;
 
-use App\Controllers\V1\UserController;
+use App\Http\Controllers\V1\UserController;
 
 class UserRoutes {
     public static function register_routes() {

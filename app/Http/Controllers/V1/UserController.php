@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers\V1;
+namespace App\Http\Controllers\V1;
 
 use WP_Error;
 use WP_REST_Request;

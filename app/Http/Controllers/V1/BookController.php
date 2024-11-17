@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers\V1;
+namespace App\Http\Controllers\V1;
 
 use WP_Error;
 use WP_REST_Request;
@@ -14,10 +14,10 @@ class BookController {
             'posts_per_page' => -1,
         ]);
 
-        return new WP_REST_Response([
+        return rest_ensure_response([
             'success' => true,
             'data' => $books,
-        ], 200 );
+        ]);
     }
 
     public function show(WP_REST_Request $request) {
