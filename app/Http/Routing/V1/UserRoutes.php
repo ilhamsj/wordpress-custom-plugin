@@ -6,22 +6,31 @@ use App\Http\Controllers\V1\UserController;
 use WP_REST_Server;
 
 class UserRoutes {
-    public static function register_routes() {
-        $userController = new UserController();
 
-        // Register routes for Users
-        register_rest_route('api/v1', '/users', [
-            'methods'  => WP_REST_Server::READABLE,
-            'callback' => [$userController, 'index'],
-            'permission_callback' => '__return_true',
-        ]);
+	public static function register_routes() {
+		$userController = new UserController();
 
-        register_rest_route('api/v1', '/users/(?P<id>\d+)', [
-            'methods'  => WP_REST_Server::READABLE,
-            'callback' => [$userController, 'show'],
-            'permission_callback' => '__return_true',
-        ]);
+		// Register routes for Users
+		register_rest_route(
+			'api/v1',
+			'/users',
+			array(
+				'methods'             => WP_REST_Server::READABLE,
+				'callback'            => array( $userController, 'index' ),
+				'permission_callback' => '__return_true',
+			)
+		);
 
-        // Add more routes as needed...
-    }
+		register_rest_route(
+			'api/v1',
+			'/users/(?P<id>\d+)',
+			array(
+				'methods'             => WP_REST_Server::READABLE,
+				'callback'            => array( $userController, 'show' ),
+				'permission_callback' => '__return_true',
+			)
+		);
+
+		// Add more routes as needed...
+	}
 }

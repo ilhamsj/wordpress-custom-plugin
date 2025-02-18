@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin Name: Laravel-Like Routing Plugin
  * Description: Example of Laravel-like routing for WordPress API.

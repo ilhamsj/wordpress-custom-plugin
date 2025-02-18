@@ -5,24 +5,29 @@ namespace App\Http\Routing\V1;
 use App\Http\Controllers\V1\BookController;
 
 class BookRoutes {
-    private static $bookController;
 
-    public static function register_routes() {
-        self::$bookController = new BookController();
+	private static $bookController;
 
-        // Register routes for Books
-        register_rest_route('api/v1', '/books', [
-            'methods'  => 'GET',
-            'callback' => [self::$bookController, 'index'],
-            'permission_callback' => '__return_true',
-        ]);
+	public static function register_routes() {
+		self::$bookController = new BookController();
 
-        register_rest_route('api/v1', '/books/(?P<id>\d+)', [
-            'methods'  => 'GET',
-            'callback' => [self::$bookController, 'show'],
-            'permission_callback' => '__return_true',
-        ]);
+		// Register routes for Books
+		register_rest_route(
+			'api/v1', '/books', [
+				'methods'             => 'GET',
+				'callback'            => [ self::$bookController, 'index' ],
+				'permission_callback' => '__return_true',
+			]
+		);
 
-        // Add more routes as needed...
-    }
+		register_rest_route(
+			'api/v1', '/books/(?P<id>\d+)', [
+				'methods'             => 'GET',
+				'callback'            => [ self::$bookController, 'show' ],
+				'permission_callback' => '__return_true',
+			]
+		);
+
+		// Add more routes as needed...
+	}
 }

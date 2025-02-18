@@ -1,12 +1,16 @@
 {
-    "intelephense.environment.includePaths": [
-        "${workspaceFolder}/vendor",
-        "/Users/ilhamsj/github/ilhamsj/wordpress-infra/src/wordpress/public/wordpress"
-    ],
-    "[php]": {
-        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
-    },
-    "[json]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    }
+  "intelephense.environment.includePaths": [
+    "${workspaceFolder}/vendor",
+    "/Users/ilhamsj/github/ilhamsj/wp/wordpress/public/wordpress"
+  ],
+  "[php]": {
+    "editor.defaultFormatter": "valeryanm.vscode-phpsab",
+    "editor.formatOnSave": true
+  },
+  // "phpsab.executablePathCBF": "/Users/ilhamsj/github/ilhamsj/wp/wordpress-custom-plugin/vendor/bin/phpcbf",
+  // "phpsab.executablePathCS": "/Users/ilhamsj/github/ilhamsj/wp/wordpress-custom-plugin/vendor/bin/phpcs",
+  "phpsab.standard": "TechInAsia",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

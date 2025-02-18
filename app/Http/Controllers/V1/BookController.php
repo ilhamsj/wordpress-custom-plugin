@@ -7,72 +7,89 @@ use WP_REST_Request;
 use WP_REST_Response;
 
 class BookController {
-    public function index(WP_REST_Request $request) {
-        // Fetch all books
-        $books = get_posts([
-            'post_type' => 'post',
-            'posts_per_page' => -1,
-        ]);
 
-        return rest_ensure_response([
-            'success' => true,
-            'data' => $books,
-        ]);
-    }
+	public function index( WP_REST_Request $request ) {
+		// Fetch all books
+		$books = get_posts(
+			[
+				'post_type'      => 'post',
+				'posts_per_page' => -1,
+			]
+		);
 
-    public function show(WP_REST_Request $request) {
-        $id = $request['id'];
-        $book = get_post($id);
+		return rest_ensure_response(
+			[
+				'success' => true,
+				'data'    => $books,
+			]
+		);
+	}
 
-        if (!$book || $book->post_type !== 'book') {
-            return new WP_Error('not_found', 'Book not found', ['status' => 404]);
-        }
+	public function show( WP_REST_Request $request ) {
+		$id   = $request['id'];
+		$book = get_post( $id );
 
-        return rest_ensure_response([
-            'success' => true,
-            'data' => $book,
-        ]);
-    }
+		if ( ! $book || $book->post_type !== 'book' ) {
+			return new WP_Error( 'not_found', 'Book not found', [ 'status' => 404 ] );
+		}
 
-    public function store(WP_REST_Request $request) {
-        $title = $request->get_param('title');
+		return rest_ensure_response(
+			[
+				'success' => true,
+				'data'    => $book,
+			]
+		);
+	}
 
-        $id = wp_insert_post([
-            'post_type' => 'book',
-            'post_title' => $title,
-            'post_status' => 'publish',
-        ]);
+	public function store( WP_REST_Request $request ) {
+		$title = $request->get_param( 'title' );
 
-        return rest_ensure_response([
-            'success' => true,
-            'message' => 'Book created successfully',
-            'id' => $id,
-        ]);
-    }
+		$id = wp_insert_post(
+			[
+				'post_type'   => 'book',
+				'post_title'  => $title,
+				'post_status' => 'publish',
+			]
+		);
 
-    public function update(WP_REST_Request $request) {
-        $id = $request['id'];
-        $title = $request->get_param('title');
+		return rest_ensure_response(
+			[
+				'success' => true,
+				'message' => 'Book created successfully',
+				'id'      => $id,
+			]
+		);
+	}
 
-        $updated = wp_update_post([
-            'ID' => $id,
-            'post_title' => $title,
-        ]);
+	public function update( WP_REST_Request $request ) {
+		$id    = $request['id'];
+		$title = $request->get_param( 'title' );
 
-        return rest_ensure_response([
-            'success' => true,
-            'message' => 'Book updated successfully',
-        ]);
-    }
+		$updated = wp_update_post(
+			[
+				'ID'         => $id,
+				'post_title' => $title,
+			]
+		);
 
-    public function destroy(WP_REST_Request $request) {
-        $id = $request['id'];
+		return rest_ensure_response(
+			[
+				'success' => true,
+				'message' => 'Book updated successfully',
+			]
+		);
+	}
 
-        wp_delete_post($id, true);
+	public function destroy( WP_REST_Request $request ) {
+		$id = $request['id'];
 
-        return rest_ensure_response([
-            'success' => true,
-            'message' => 'Book deleted successfully',
-        ]);
-    }
+		wp_delete_post( $id, true );
+
+		return rest_ensure_response(
+			[
+				'success' => true,
+				'message' => 'Book deleted successfully',
+			]
+		);
+	}
 }
