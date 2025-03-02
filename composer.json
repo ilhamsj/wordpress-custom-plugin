@@ -12,7 +12,9 @@
   "minimum-stability": "dev",
   "autoload": {
     "psr-4": {
-      "App\\": "app/"
+      "App\\": "app/",
+      "Src\\": "src/",
+      "Wp\\": "wp/"
     }
   },
   "repositories": [
