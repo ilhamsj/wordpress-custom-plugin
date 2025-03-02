@@ -12,7 +12,3 @@ if (!defined('ABSPATH')) {
 
 // Autoload or include dependencies
 require_once __DIR__ . '/vendor/autoload.php';
-
-use App\Init;
-
-new Init();
